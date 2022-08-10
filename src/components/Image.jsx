@@ -4,7 +4,7 @@ import pic from '../assets/image/pic.jpg'
   export  const Image = () => {
   return (
     <div>
-      <img src={pic}/>
+      <img src={pic}   alt="" />
     </div>
   )
 }

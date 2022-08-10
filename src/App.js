@@ -1,16 +1,19 @@
 import React from 'react'
+import Button from './components/Button'
 import Header from './components/Header'
-import { Button1,Button2,Button3 } from './components/Button'
 import { Image } from './components/Image'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
     <div>
-      <Image/>
+      <Navbar/>
       <Header/>
-      <Button1/>
-      <Button2/>
-      <Button3/>
+      <Button label="Add to Cart"/>
+      <Button label="Read More"/>
+      <Button label="Register"/>
+      <Button label="Login"/>
+      <Image/>
     </div>
   )
 }
