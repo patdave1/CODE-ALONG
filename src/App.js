@@ -10,7 +10,8 @@ import TaskManager from './components/TaskManager'
 const App = () => {
   return (
     <div>
-    <Form/>
+    <TaskManager/>
+    {/* <Form/> */}
       {/* <Navbar/> */}
       {/* <Header/>
       <Button label="Add to Cart"/>

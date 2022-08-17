@@ -1,26 +1,49 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { v4 as uuid } from "uuid";
 import TaskItem from './TaskItem';
 
 
 const TaskManager = () => {
 
-const [tasks,setTasks]= useState([]);
+  const [tasks,setTasks]= useState(()=>{
+    // get task from localstorage
+    const tasks= localStorage.getItem("tasks");
+    if(!tasks) return[];
+    return JSON.parse(tasks);
+  });
+
 const [input, setInput] = useState("");
 
 const handleSubmit=(e)=>{
   e.preventDefault();
- if (input ==="") return;
-  setTasks([input, ...tasks])
-  setInput("");
+  if (input ==="") return;
 
+  const newTask ={
+   id : uuid(),
+   text : input,
+   completed : false,
+  };
+
+
+  setTasks([newTask, ...tasks])
+  setInput("");
+  localStorage.setItem("tasks", JSON.stringify(tasks))
 }
 
-const removeTask= (id) => {
+useEffect(()=>{
+  localStorage.setItem("task",JSON.stringify(tasks))
 
-  const newTasks =tasks.filter((task)=>task!==id) 
+},[tasks])
+
+
+const removeTask= (id) => {
+  const newTasks =tasks.filter((task)=>task.id !== id) 
     setTasks(newTasks);
+
+    localStorage.removeItem(id);
   };
   
+
 
   return (
     <div className="h-screen bg-blue-600 flex justify-center items-center">
@@ -33,7 +56,7 @@ const removeTask= (id) => {
          <button type="submit"  className="bg-blue-600 px-7 py-2 text-white text-lg rounded-md">Add</button>
         </form>
         <div className="space-y-2 overflow-y-auto h-56">
-        {tasks.map((task)=> <TaskItem task={task}  removeTask={removeTask}/>)}
+        {tasks.map((task)=> <TaskItem key={task.id} task={task}  removeTask={removeTask}/>)}
         </div>
       </div>  
     </div>
