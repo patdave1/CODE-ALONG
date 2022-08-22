@@ -6,7 +6,7 @@ function Product({product}) {
 
 <a href="#">
         <img 
-        class="p-8 rounded-t-lg"
+        className="p-8 rounded-t-lg"
         src={product.images[0]}
         alt="product image"/>
     </a>

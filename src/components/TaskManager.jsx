@@ -24,7 +24,7 @@ const handleSubmit=(e)=>{
    completed : false,
   };
 
-
+ 
   setTasks([newTask, ...tasks])
   setInput("");
   localStorage.setItem("tasks", JSON.stringify(tasks))
