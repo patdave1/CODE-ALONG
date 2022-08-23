@@ -5,20 +5,15 @@ import TaskItem from './TaskItem';
 
 const TaskManager = () => {
 
-  const [tasks,setTasks]= useState(()=>{
-    // get task from localstorage
-    const tasks= localStorage.getItem("tasks");
-    if(!tasks) return[];
-    return JSON.parse(tasks);
-  });
+ const [tasks,setTasks]= useState([]);
 
-const [input, setInput] = useState("");
+ const [input, setInput] = useState("");
 
-const handleSubmit=(e)=>{
+ const handleSubmit=(e)=>{
   e.preventDefault();
   if (input ==="") return;
 
-  const newTask ={
+  const newTask = {
    id : uuid(),
    text : input,
    completed : false,
@@ -27,6 +22,8 @@ const handleSubmit=(e)=>{
  
   setTasks([newTask, ...tasks])
   setInput("");
+
+
   localStorage.setItem("tasks", JSON.stringify(tasks))
 }
 

@@ -1,8 +1,12 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
-const NavItem = ({menu}) => {
+
+const NavItem = ({label, to}) => {
   return (
-    <li>{menu}</li>
+    <li>
+  <NavLink to={to}>{label}</NavLink>
+    </li>
   )
 }
 

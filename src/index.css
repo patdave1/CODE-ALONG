@@ -9,4 +9,7 @@
     .form-input{
         @apply border w-full outline-none py-1 px-2 text-lg text-gray-700
     }
+    .active{
+        @apply text-c
+    }
 }
