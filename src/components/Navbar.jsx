@@ -22,6 +22,10 @@ const links = [
         label: "Contact",
         to:"/contact",
     },
+    {
+        label: "Product Details",
+        to:"/product-details",
+    },
 ]
 
 const Navbar = () => {

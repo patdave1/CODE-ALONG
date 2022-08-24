@@ -1,7 +1,7 @@
 import React from 'react';
 import Product from './Product';
 import useAxios from '../hooks/useAxios';
-import Spinner from './Spinner';
+import Spinner from '../components/Spinner';
 
 const ProductList = () => {
   const { data ,isLoading, error } = useAxios("https://api.escuelajs.co/api/v1/products");
@@ -27,6 +27,7 @@ const ProductList = () => {
      <Product product={data}/>
     ))}
     </div>
+    
     
   )
 }
