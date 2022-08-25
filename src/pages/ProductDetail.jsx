@@ -8,9 +8,9 @@ const ProductDetail = () => {
   return (
     <div className="min-h-screen bg-slate-500 flex justify-center items-center">
       <div className="max-w-5xl bg-white grid grid-cols-2 rounded-lg">
-        <di>
+        <div>
           <img src={data?.category.image} />
-        </di>
+        </div>
         <div className="flex">
            {data?.images.map((image, index)=>(
             <img className="w-56" key={index} src={image}/>

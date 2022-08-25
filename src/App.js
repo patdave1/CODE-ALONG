@@ -19,7 +19,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/task-manager" element={<TaskManager />} />
         <Route path="/product-list" element={<ProductList/>} />
-        <Route path="/product-details" element={<ProductDetail/> } />
+        <Route path="/product/:productId" element={<ProductDetail/> } />
         <Route path="*" element={<NotFound/>} />
       </Routes>
     </BrowserRouter>
