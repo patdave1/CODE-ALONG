@@ -7,6 +7,7 @@ const NotFound = () => {
     <img src={Not} alt=""/>
     </div>
   )
+  
 }
 
 export default NotFound
